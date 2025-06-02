@@ -5,48 +5,44 @@ using Avalonia.Interactivity;
 using Avalonia.Media.Imaging;
 using System;
 using System.Collections.Generic;
+using Avalonia.Platform;
 
 namespace TravelPlanner1
 {
 
     public partial class MainWindow : Window
     {
-        private Dictionary<string, string> CountryImages = new()
-        {
-            { "Włochy", "Assets/italy.jpg" },
-            { "Japonia", "Assets/japan.jpg" },
-            { "Norwegia", "Assets/norway.jpg" },
-            { "USA", "Assets/usa.jpg" },
-            { "Francja", "Assets/france.jpg" }
-        };
-
+        
         public MainWindow()
         {
             InitializeComponent();
         }
 
+
         private void CountryComboBox_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(CityTextBox.Text))
+            if (CountryComboBox.SelectedItem is ComboBoxItem selected)
             {
-                if (CountryComboBox.SelectedItem is ComboBoxItem selected)
-                {
-                    if (CountryImages.TryGetValue(selected.Content.ToString()!, out string path))
-                    {
-                        CountryImage.Source = new Bitmap(path);
-                    }
-                }
+                var obrazek = new Uri($"avares://TravelPlanner1/Assets/{selected.Content}.jpg");
+                var stream = AssetLoader.Open(obrazek);
+                CountryImage.Source = new Bitmap(stream);
             }
         }
 
+        
+
         private void AddCity_Click(object? sender, RoutedEventArgs e)
         {
-            throw new System.NotImplementedException();
+            if (!string.IsNullOrWhiteSpace(CityTextBox.Text))
+            {
+                CitiesListBox.Items.Add(CityTextBox.Text);
+                CityTextBox.Text = "";
+            }
+
         }
 
         private void ShowDetails_Click(object? sender, RoutedEventArgs e)
         {
-            throw new System.NotImplementedException();
         }
     }
 }

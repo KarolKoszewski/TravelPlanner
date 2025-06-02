@@ -3,7 +3,9 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="TravelPlanner1/App.axaml" value="TravelPlanner1/TravelPlanner1.csproj" />
         <entry key="TravelPlanner1/MainWindow.axaml" value="TravelPlanner1/TravelPlanner1.csproj" />
+        <entry key="TravelPlanner1/Podsumowanie.axaml" value="TravelPlanner1/TravelPlanner1.csproj" />
       </map>
     </option>
   </component>

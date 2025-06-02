@@ -19,4 +19,27 @@
             <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
         </PackageReference>
     </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Assets\France.jpg" />
+      <AvaloniaResource Include="Assets\Francja.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="Assets\Italy.jpg" />
+      <AvaloniaResource Include="Assets\Włochy.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="Assets\Japan.jpg" />
+      <AvaloniaResource Include="Assets\Japonia.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="Assets\Norway.jpg" />
+      <AvaloniaResource Include="Assets\Norwegia.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="Assets\Usa.jpg" />
+      <AvaloniaResource Include="Assets\USA.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+    </ItemGroup>
 </Project>

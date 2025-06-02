@@ -1,59 +1,54 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="TravelPlanner1.MainWindow"
-        Width="800" Height="600"
+        Width="800" Height="700"
         Title="Planer Podróży">
-        <Grid Margin="10">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-                
-            <StackPanel>
-                <TextBlock Text="Imię i nazwisko:"/>
-                <TextBox Name="NameTextBox"/>
-                
-                <TextBlock Text="Wybierz kraj:" Margin="0,10,0,0"/>
-                <ComboBox Name="CountryComboBox" SelectionChanged="CountryComboBox_OnSelectionChanged">
-                    <ComboBoxItem Content="Włochy"/>
-                    <ComboBoxItem Content="Japonia"/>
-                    <ComboBoxItem Content="Norwegia"/>
-                    <ComboBoxItem Content="USA"/>
-                    <ComboBoxItem Content="Francja"/>
-                </ComboBox>
-                
-                <Image Name="CountryImage" Height="150" Margin="0,10"/>
-                
-                <TextBlock Text="Atrakcje turystyczne:" Margin="0,10"/>
-                
-                <WrapPanel>
-                    <CheckBox Name="MuseumsCheckBox" Content="Muzea"/>
-                    <CheckBox Name="ParksCheckBox" Content="Parki Narodowe"/>
-                    <CheckBox Name="MonumentsCheckBox" Content="Zabytki"/>
-                    <CheckBox Name="RestaurantsCheckBox" Content="Restauracje"/>
-                    <CheckBox Name="GalleriesCheckBox" Content="Galerie sztuki"/>
-                    <CheckBox Name="FestivalsCheckBox" Content="Festiwale i koncerty"/>
-                </WrapPanel>
-                
-                <TextBlock Text="Środek transportu:" Margin="0,10"/>
-                <StackPanel Orientation="Horizontal">
-                    <RadioButton Name="PlaneRadio" Content="Samolot" GroupName="Transport"/>
-                    <RadioButton Name="CarRadio" Content="Samochód" GroupName="Transport"/>
-                    <RadioButton Name="TrainRadio" Content="Pociąg" GroupName="Transport"/>
-                    <RadioButton Name="ShipRadio" Content="Statek" GroupName="Transport"/>
-                </StackPanel>
-                
-                <TextBlock Text="Miasta do odwiedzenia" Margin="0,10"/>
-                <StackPanel Orientation="Horizontal">
-                    <TextBox Name="CityTextBox" Width="200"/>
-                    <Button Content="Dodaj miasto" Click="AddCity_Click" Margin="5,0"/>
-                </StackPanel>
-                
-                <ListBox Name="CitiesListBox" Height="100"/>
-                
-                <Button Content="Pokaż szczegóły podróży" Margin="0,10" Click="ShowDetails_Click"/>
+
+    <ScrollViewer>
+        <StackPanel Margin="20" Spacing="10">
+
+            <TextBlock Text="Imię i nazwisko:" FontWeight="Bold"/>
+            <TextBox Name="NameTextBox"/>
+
+            <TextBlock Text="Wybierz kraj:" FontWeight="Bold"/>
+            <ComboBox Name="CountryComboBox" SelectionChanged="CountryComboBox_OnSelectionChanged">
+                <ComboBoxItem Content="Włochy"/>
+                <ComboBoxItem Content="Japonia"/>
+                <ComboBoxItem Content="Norwegia"/>
+                <ComboBoxItem Content="USA"/>
+                <ComboBoxItem Content="Francja"/>
+            </ComboBox>
+
+            <Image Name="CountryImage" Height="150" Margin="0,10"/>
+            
+
+            <TextBlock Text="Atrakcje turystyczne:" FontWeight="Bold"/>
+            <WrapPanel>
+                <CheckBox Name="MuseumsCheckBox" Content="Muzea"/>
+                <CheckBox Name="ParksCheckBox" Content="Parki Narodowe"/>
+                <CheckBox Name="MonumentsCheckBox" Content="Zabytki"/>
+                <CheckBox Name="RestaurantsCheckBox" Content="Restauracje"/>
+                <CheckBox Name="GalleriesCheckBox" Content="Galerie sztuki"/>
+                <CheckBox Name="FestivalsCheckBox" Content="Festiwale i koncerty"/>
+            </WrapPanel>
+
+            <TextBlock Text="Środek transportu:" FontWeight="Bold"/>
+            <StackPanel Orientation="Horizontal">
+                <RadioButton Name="PlaneRadio" Content="Samolot" GroupName="Transport"/>
+                <RadioButton Name="CarRadio" Content="Samochód" GroupName="Transport"/>
+                <RadioButton Name="TrainRadio" Content="Pociąg" GroupName="Transport"/>
+                <RadioButton Name="ShipRadio" Content="Statek" GroupName="Transport"/>
             </StackPanel>
-        </Grid>
+
+            <TextBlock Text="Miasta do odwiedzenia:" FontWeight="Bold"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox Name="CityTextBox" Width="200"/>
+                <Button Content="Dodaj miasto" Click="AddCity_Click" Margin="5,0"/>
+            </StackPanel>
+
+            <ListBox Name="CitiesListBox" Height="100"/>
+
+            <Button Content="Pokaż szczegóły podróży" Click="ShowDetails_Click" Margin="0,10"/>
+        </StackPanel>
+    </ScrollViewer>
 </Window>
