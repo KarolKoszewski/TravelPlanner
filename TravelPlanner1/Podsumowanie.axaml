@@ -6,11 +6,12 @@
         x:Class="TravelPlanner1.Podsumowanie"
         Title="Podsumowanie">
     <StackPanel>
-        <TextBlock Text="Coś poszło nie tak"
+        <TextBlock Text="Szczegóły podróży"
                    FontSize="30"
                    Margin="30"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"/>
+        <TextBlock Name="PodsumowanieText"/>
         <Button Content="Zamknij" Click="OnCloseClick" 
                 FontSize="25"
                 HorizontalAlignment="Center"
