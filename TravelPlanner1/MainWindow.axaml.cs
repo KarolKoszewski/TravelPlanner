@@ -43,6 +43,8 @@ namespace TravelPlanner1
 
         private void ShowDetails_Click(object? sender, RoutedEventArgs e)
         {
+            var podsumowanie = new Podsumowanie();
+            podsumowanie.Show(); 
         }
     }
 }
